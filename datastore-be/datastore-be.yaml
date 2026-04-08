@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -5,6 +6,10 @@ metadata:
   labels:
     type: backend
 spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      type: backend
   template:
     metadata:
       name: datastore-backend
@@ -61,13 +66,14 @@ spec:
             periodSeconds: 3
             timeoutSeconds: 4
             failureThreshold: 3
-  replicas: 5
-  selector:
-    matchLabels:
-      type: backend
-
+          volumeMounts:
+            - name: datastore-storage
+              mountPath: /app/data   # container lo path
+      volumes:
+        - name: datastore-storage
+          persistentVolumeClaim:
+            claimName: datastore-pvc   # PVC name
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
