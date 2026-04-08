@@ -45,26 +45,26 @@ spec:
             httpGet:
               path: /actuator
               port: 8084
-            initialDelaySeconds: 3
-            periodSeconds: 3
-            timeoutSeconds: 4
-            failureThreshold: 3
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            timeoutSeconds: 10
+            failureThreshold: 10
           readinessProbe:
             httpGet:
               path: /actuator
               port: 8084
-            initialDelaySeconds: 3
-            periodSeconds: 3
-            timeoutSeconds: 4
-            failureThreshold: 3
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            timeoutSeconds: 10
+            failureThreshold: 10
           startupProbe:
             httpGet:
               path: /actuator
               port: 8084
-            initialDelaySeconds: 3
-            periodSeconds: 3
-            timeoutSeconds: 4
-            failureThreshold: 3
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            timeoutSeconds: 10
+            failureThreshold: 10
           volumeMounts:
             - name: datastore-storage
               mountPath: /app/data   # container lo path
