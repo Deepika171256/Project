@@ -24,7 +24,7 @@ spec:
                 configMapKeyRef:
                   name: datastore-be-cm
                   key: mysqlHost
-            - name: MYSQL_USERNAME
+            - name: MYSQL_USER
               valueFrom:
                 configMapKeyRef:
                   name: datastore-be-cm
