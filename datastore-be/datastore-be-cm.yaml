@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: datastore-be-cm
 data:
-  mysqlHost: "jdbc:mysql://datastore-mysql-svc:3306/test"
+  mysqlHost: jdbc:mysql://datastore-mysql-svc:3306/test
   mysqlUname: root
