@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: datastore-pvc
-  namespace: backend
+  namespace: default
 spec:
   accessModes:
     - ReadWriteOnce
